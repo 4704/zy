@@ -50,7 +50,7 @@
             clearInterval(timer)
             this.yzm = "获取验证码";
             this.num = 60
-            this.flag = flag
+            this.flag = false
           }
         }, 1000)
         let {
