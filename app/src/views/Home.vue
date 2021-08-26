@@ -4,12 +4,12 @@
     <div class="box">
       <i class="icon iconfont icon-mobile"></i>
       <input type="text" placeholder="请输入手机号" v-model="mobile">
-      <button class="btn">{{yzm}}</button><br>
+      <button class="btn" @click="add" :disabled="flag">{{yzm}}</button><br>
       <i class="icon iconfont icon-protection"></i>
       <input type="text" placeholder="请输入验证码" v-model="ym">
     </div>
     <div class="a">
-      <button class="ad" @click="add">登录</button>
+      <button class="ad">登录</button>
       <p class="aa">*未注册的手机号将自动注册 <span>密码登录</span></p>
 
     </div>
@@ -29,24 +29,36 @@
 </template>
 
 <script>
-
   export default {
     data() {
       return {
         yzm: "获取验证码",
         mobile: "",
         ym: "",
+        num: 60,
+        flag: false
       }
     },
-    // mounted() {
 
-    // },
     methods: {
       async add() {
+        this.flag = true
+        var timer = setInterval(() => {
+          this.num--
+          this.yzm = `还剩${this.num}秒`
+          if (this.num == 0) {
+            clearInterval(timer)
+            this.yzm = "获取验证码";
+            this.num = 60
+            this.flag = flag
+          }
+        }, 1000)
         let {
           data: res
-        } = await this.axios.post('http://120.53.31.103:84/api/app/login?mobile=' + this.mobile)
-        // console.log(res);
+        } = await this.axios.post('http://120.53.31.103:84/api/app/smsCode', {
+          mobile: this.mobile,
+          sms_type: "add"
+        })
       }
     },
   }
