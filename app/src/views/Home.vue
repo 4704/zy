@@ -57,7 +57,7 @@
           data: res
         } = await this.axios.post('http://120.53.31.103:84/api/app/smsCode', {
           mobile: this.mobile,
-          sms_type: "add"
+          sms_type: "login"
         })
       }
     },
