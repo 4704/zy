@@ -9,9 +9,8 @@
       <input type="text" placeholder="请输入验证码" v-model="ym">
     </div>
     <div class="a">
-      <button class="ad">登录</button>
+      <button class="ad" @click="dl">登录</button>
       <p class="aa">*未注册的手机号将自动注册 <span>密码登录</span></p>
-
     </div>
     <p class="s">第三方登录</p>
 
@@ -29,16 +28,29 @@
 </template>
 
 <script>
+  import {
+    smsCode,
+    login
+  } from '@/http/api'
   export default {
     data() {
       return {
         yzm: "获取验证码",
-        mobile: "",
+        mobile: "18139981234",
         ym: "",
         num: 60,
         flag: false
       }
     },
+    //  created() {
+    // service.post('http://120.53.31.103:84/api/app/smsCode',{mobile:18139981234,sms_type:"login"}).then(res=>{
+    //   console.log(res);
+    // })
+
+    // 二次封装
+    // let res=await smsCode({mobile:18139981234,sms_type:"login"})
+    // console.log(res);
+    // },
 
     methods: {
       async add() {
@@ -53,12 +65,27 @@
             this.flag = false
           }
         }, 1000)
-        let {
-          data: res
-        } = await this.axios.post('http://120.53.31.103:84/api/app/smsCode', {
+        let res = await smsCode({
           mobile: this.mobile,
-          sms_type: "login"
+          sms_type: "login",
         })
+        console.log(res);
+      },
+      async dl() {
+        var res = await login({
+          mobile: this.mobile,
+<<<<<<< HEAD
+          sms_type: "login"
+=======
+          sms_code: this.ym,
+          type: 2,
+          client: "1"
+>>>>>>> dev
+        })
+        console.log(res);
+        if (res.code == 200) {
+          this.$router.push('/login')
+        }
       }
     },
   }
@@ -91,6 +118,7 @@
     font-size: 10px;
     justify-content: space-between;
     color: #999;
+    margin-top: 10px;
   }
 
   .img {
