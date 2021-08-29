@@ -8,6 +8,7 @@ import 'vant/lib/index.css';
 import '@/assets/iconfont/iconfont.css'
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
+import 'lib-flexible/flexible';
 Vue.use(ElementUI);
 Vue.use(Vant);
 Vue.prototype.axios = axios
