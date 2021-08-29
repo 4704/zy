@@ -3,5 +3,6 @@ module.exports = {
     login: "/login",
     password: "/password",
     tabbar: "/nav/bottom",
-    banner: "/banner"
+    banner: "/banner",
+    shuj: "/recommend/appIndex"
 }
