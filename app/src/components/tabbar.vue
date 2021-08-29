@@ -7,9 +7,7 @@
     </div>
 </template>
 <script>
-    import {
-        tabbar
-    } from '@/http/api'
+    import { tabbar } from '@/http/api'
     export default {
         data() {
             return {
@@ -18,14 +16,7 @@
         },
 
         async created() {
-            let {
-                data: {
-                    data: {
-                        index
-                    }
-                }
-            } = await tabbar()
-            // console.log(index);
+            let { data: { data: { index}}} = await tabbar()
             let lis = ['/index', '/class', '/news', '/book', '/my']
             index.forEach((element, key) => {
                 element.url = lis[key]
