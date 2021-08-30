@@ -166,7 +166,7 @@ export default {
     methods:{
         // 去登陆页
         goLogin(){
-            this.$router.push("/")
+            this.$router.push("/home")
         },
         goSetUser(){
             if(this.$store.state.remember_token != ""){
@@ -198,11 +198,13 @@ export default {
         .box-center{
             width: 100%;
             height: 200px;
+
+            margin-top: -30px;
             text-align: center;
         }
         .box-bottom{
             width: 100%;
-            height: 150px;
+            height: 170px;
             position: absolute;
             bottom: 0;
             left: 0;
