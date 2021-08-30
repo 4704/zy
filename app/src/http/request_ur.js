@@ -4,5 +4,6 @@ module.exports = {
     password: "/password",
     tabbar: "/nav/bottom",
     banner: "/banner",
-    shuj: "/recommend/appIndex"
+    shuj: "/recommend/appIndex",
+    password: '/password'
 }

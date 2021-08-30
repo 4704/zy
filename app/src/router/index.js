@@ -4,29 +4,14 @@ import Home from "../views/Home.vue";
 
 Vue.use(VueRouter);
 
-const routes = [{
-<<<<<<< HEAD
-        path: '/',
-        name: 'Home',
-        component: Home
-    },
-    {
-        path: '/about',
-        name: 'About',
-        component: () =>
-            import ('../views/About.vue')
-    }
-]
-
 const router = new VueRouter({
-    mode: 'history',
+    mode: "history",
     base: process.env.BASE_URL,
-    routes
-})
+    routes,
+});
 
-export default router
-=======
-        path: "/",
+export default router = [{
+        path: "/home",
         name: "Home",
         component: Home,
     },
@@ -57,11 +42,18 @@ export default router
                 component: () =>
                     import ("@/views/book/book"),
             },
+
             {
                 path: "/my",
                 name: "my",
                 component: () =>
                     import ("@/views/my/my"),
+            },
+            {
+                path: "/setUser",
+                name: "setUser",
+                component: () =>
+                    import ("@/views/my/setUser"),
             },
         ],
         component: () =>
@@ -82,4 +74,3 @@ const router = new VueRouter({
 });
 
 export default router;
->>>>>>> dev

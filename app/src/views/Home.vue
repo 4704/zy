@@ -74,13 +74,7 @@
       async dl() {
         var res = await login({
           mobile: this.mobile,
-<<<<<<< HEAD
           sms_type: "login"
-=======
-          sms_code: this.ym,
-          type: 2,
-          client: "1"
->>>>>>> dev
         })
         console.log(res);
         if (res.code == 200) {
