@@ -118,7 +118,7 @@
   }
 
   .img {
-    width: 100%;
+    width: 80%;
     height: 100px;
   }
 
@@ -149,7 +149,7 @@
 
   .ad {
     background: #eb6100;
-    width: 370px;
+    width: 340px;
     height: 50px;
     border: none;
     color: white;
