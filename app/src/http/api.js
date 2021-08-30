@@ -43,3 +43,11 @@ export function shuj(arg) {
         method: "get",
     });
 }
+//  设置登陆密码/修改
+export function password(arg) {
+    return service({
+        url: request_ur.password,
+        data: arg,
+        method: "post"
+    })
+}
