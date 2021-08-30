@@ -118,7 +118,7 @@ export default {
   },
 };
 </script>
-<style>
+<style scoped>
 .mff {
   margin-left: 100px;
   font-size: 12px;
@@ -236,7 +236,7 @@ export default {
 }
 
 .pq {
-  margin-left: 285px;
+  margin-left: 270px;
 }
 
 .zs {

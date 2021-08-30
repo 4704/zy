@@ -34,7 +34,7 @@ export default {
   },
 };
 </script>
-<style>
+<style scoped>
 .dt {
   width: 100%;
   height: 100%;
