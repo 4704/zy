@@ -4,13 +4,7 @@ import Home from "../views/Home.vue";
 
 Vue.use(VueRouter);
 
-const router = new VueRouter({
-    mode: "history",
-    base: process.env.BASE_URL,
-    routes,
-});
-
-export default router = [{
+const routes = [{
         path: "/home",
         name: "Home",
         component: Home,
@@ -42,7 +36,6 @@ export default router = [{
                 component: () =>
                     import ("@/views/book/book"),
             },
-
             {
                 path: "/my",
                 name: "my",
@@ -55,6 +48,7 @@ export default router = [{
                 component: () =>
                     import ("@/views/my/setUser"),
             },
+            // setUser
         ],
         component: () =>
             import ("@/views/login"),
@@ -66,3 +60,11 @@ export default router = [{
             import ("../views/About.vue"),
     },
 ];
+
+const router = new VueRouter({
+    mode: "history",
+    base: process.env.BASE_URL,
+    routes,
+});
+
+export default router;
