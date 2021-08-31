@@ -196,7 +196,8 @@
         width: 100%;
         height: 500px;
         background: #e55965;
-        padding-top: 90px;
+        padding-top: 50px;
+        box-sizing: border-box;
     }
 
     .top {
