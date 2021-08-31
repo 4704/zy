@@ -54,8 +54,6 @@ export default {
       flag: true,
     };
   },
-
-
   methods: {
     // 获取验证码
     async address() {
