@@ -54,7 +54,6 @@ export default {
       flag: true,
     };
   },
-<<<<<<< HEAD
   //  created() {
   // service.post('http://120.53.31.103:84/api/app/smsCode',{mobile:18139981234,sms_type:"login"}).then(res=>{
   //   console.log(res);
@@ -65,8 +64,6 @@ export default {
     // console.log(res);
     // },
 
-=======
->>>>>>> dev
   methods: {
     // 获取验证码
     async address() {
@@ -123,99 +120,6 @@ export default {
   },
 };
 </script>
-<<<<<<< HEAD
-<style scoped>
-.mybox {
-  width: 100%;
-  height: 100%;
-}
-
-.home {
-  width: 100%;
-  padding: 50px;
-  box-sizing: border-box;
-  height: 100%;
-}
-
-.h1 {
-  display: flex;
-  justify-content: space-around;
-  margin-top: 50px;
-  font-size: 13px;
-  text-align: center;
-  color: #999;
-}
-
-  .w {
-    width: 30px;
-    height: 30px;
-  }
-
-  .s {
-    margin-top: 90px;
-    text-align: center;
-    color: #999;
-    font-size: 13px;
-  }
-
-  .aa {
-    display: flex;
-    width: 80%;
-    font-size: 10px;
-    justify-content: space-between;
-    color: #999;
-    margin-top: 10px;
-  }
-
-.img {
-  width: 100%;
-  height: 100px;
-  margin: 0 auto;
-}
-
-  .icon-protection {
-    color: #eb6100;
-  }
-
-  .icon-mobile {
-    color: #eb6100;
-  }
-
-.box_inp {
-  position: relative;
-}
-
-.btn {
-  width: 80px;
-  font-size: 10px;
-  background: #eb6100;
-  border: none;
-  color: white;
-  height: 40px;
-  position: absolute;
-  right: 30px;
-  top: 9px;
-}
-
-.input {
-  border: none;
-  border: 1px solid rgb(223, 219, 219);
-  margin: 8px;
-  width: 80%;
-  height: 40px;
-  color: #999;
-}
-
-.ad {
-  background: #eb6100;
-  width: 100%;
-  height: 40px;
-  border: none;
-  color: white;
-  border-radius: 5px;
-  text-align: center;
-  margin-top: 50px;
-=======
 
 <style lang="scss" scoped>
 .login {
@@ -321,6 +225,5 @@ export default {
       }
     }
   }
->>>>>>> dev
 }
 </style>
