@@ -42,6 +42,7 @@ const routes = [{
                 component: () =>
                     import ("@/views/my/my"),
             },
+
             {
                 path: "/setUser",
                 name: "setUser",
@@ -58,6 +59,12 @@ const routes = [{
         name: "About",
         component: () =>
             import ("../views/About.vue"),
+    },
+    {
+        path: "/xin",
+        name: "xin",
+        component: () =>
+            import ("@/views/xin.vue"),
     },
 ];
 
