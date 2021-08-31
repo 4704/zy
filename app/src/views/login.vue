@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="a">
         <router-view></router-view>
         <Tabbar></Tabbar>
     </div>
@@ -18,6 +18,9 @@
         },
     }
 </script>
-<style>
-
+<style lang="scss" scoped>
+.a{
+    width: 100%;
+    height: 100%;
+}
 </style>
