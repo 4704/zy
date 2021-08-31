@@ -54,15 +54,7 @@ export default {
       flag: true,
     };
   },
-  //  created() {
-  // service.post('http://120.53.31.103:84/api/app/smsCode',{mobile:18139981234,sms_type:"login"}).then(res=>{
-  //   console.log(res);
-  // })
 
-    // 二次封装
-    // let res=await smsCode({mobile:18139981234,sms_type:"login"})
-    // console.log(res);
-    // },
 
   methods: {
     // 获取验证码
