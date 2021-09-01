@@ -4,7 +4,7 @@ import store from "@/store";
 // 基础配置
 let service = axios.create({
     baseURL: base_url, //这个就是base_url,结合
-    timeout: 5000, //请求超时
+    timeout: 10000, //请求超时
 });
 // 请求拦截
 service.interceptors.request.use(
