@@ -10,7 +10,7 @@
             <div class="box-success">
                 <img style="width:70px;height:70px;" src="http://120.53.31.103:84/uploads/avatar.jpg" alt=""
                     class="tou">
-                <b>181****1234</b>
+                <b v-if="$store.state.nickname">  {{ $store.state.nickname }}</b>
                 <van-tag type="primary" size="large" @click="qd" v-show="show_q">
                     <van-icon name="calendar-o" />
                     已签到</van-tag>
@@ -25,7 +25,7 @@
                     <p>本周课时</p>
                 </div>
                 <div class="box-ad">
-                    <p class="box-ab">0</p>
+                    <p class="box-ab">4</p>
                     <p>我的积分</p>
                 </div>
             </div>
@@ -217,7 +217,7 @@
             width: 100%;
             height: 200px;
             margin-top: -40px;
-            margin-left: 20px;
+            box-sizing: border-box;
 
                 .van-tag {
                     position: absolute;
@@ -228,12 +228,14 @@
                     height: 30px;
                     font-size: 12px;
                 }
+                .tou{
+                    margin-left: 20px;
+                }
 
             b {
                 font-size: 25px;
                 color: white;
                 margin-left: 28px;
-                margin-top: -20px;
                 width: 200px;
                 height: 200px;
             }

@@ -6,7 +6,7 @@
                     <img class="aa" src="http://120.53.31.103:84/uploads/avatar.jpg" alt="" />
                 </div>
                 <div class="top_two">
-                    <span>181****1234</span>
+                    <span>{{ $store.state.nickname }}</span>
                     <p class="ee">积分：4</p>
                 </div>
                 <div>
