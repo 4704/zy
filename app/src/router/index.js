@@ -51,11 +51,19 @@ const routes = [{
             },
         ],
     },
+    // 设置密码理由
     {
         path: "/setUser",
         name: "setUser",
         component: () =>
             import ("@/views/Person/setUser"),
+    },
+    // 课程详情路由
+    {
+        path: "/xq",
+        name: "xq",
+        component: () =>
+            import ("@/views/ShowTeachers/xq"),
     },
 
     // 签到页路由

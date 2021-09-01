@@ -51,3 +51,33 @@ export function integral(arg) {
         method: "get"
     })
 }
+
+export function teacher(arg) {
+    return service({
+        url: request_ur.teacher + arg,
+        data: arg,
+        method: 'get'
+    })
+}
+export function kc() {
+    return service({
+        url: request_ur.kc,
+        data: {},
+        method: "get"
+    })
+}
+export function mainCourse(arg) {
+    return service({
+        url: request_ur.mainCourse,
+        data: arg,
+        method: "post"
+    })
+}
+
+export function basis(arg) {
+    return service({
+        url: request_ur.basis,
+        data: arg,
+        method: "get"
+    })
+}
