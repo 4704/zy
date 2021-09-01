@@ -143,7 +143,6 @@
         }
     }
 
-
     .good_top {
         width: 90%;
         margin: auto;
@@ -153,7 +152,6 @@
     }
 
     .good_right::after {
-
         display: block;
         position: absolute;
         top: 50%;
@@ -162,12 +160,7 @@
     }
 
     .good_left::after {
-
         display: inline-block;
-        width: 0.05333rem;
-        width: 0.53333vw;
-        height: 0.34667rem;
-        height: 3.46667vw;
         position: absolute;
         left: 0;
         top: 50%;
@@ -183,7 +176,7 @@
 
     .top_red {
         width: 100%;
-        height: 500px;
+        height: 450px;
         background: #e55965;
         padding-top: 50px;
         box-sizing: border-box;
