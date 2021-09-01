@@ -1,55 +1,62 @@
 <template>
-    <div class="box">
-        <router-link v-for="(item, index) in list" :key="index" class="link" :to="item.url">
-            <img :src="item.nav_img" alt="" class="icon"><br>
-            <span> {{item.name}}</span>
-        </router-link>
+    <div class="tabbar">
+        <router-view></router-view>
+        <div class="tabbar-box">
+            <div class="box-item" v-for="(item,index) in list" :key="index" @click="tr(item,index)">
+                <img class="item_img" :src="active == index? item.nav_img_checked:item.nav_img" />
+                <p :style="active == index ? 'color:red' : ''">{{item.name}}</p>
+            </div>
+        </div>
     </div>
 </template>
 <script>
-    import { tabbar } from '@/http/api'
+    import {
+        tabbar
+    } from '@/http/api'
     export default {
         data() {
             return {
-                list: []
+                list: [],
+                active: 0
             }
         },
 
         async created() {
-            let { data: { data: { index}}} = await tabbar()
-            // console.log(index);
-            let lis = ['/index', '/class', '/news', '/book', '/my']
-            index.forEach((element, key) => {
-                element.url = lis[key]
-            });
-            this.list = index
+             const { data:res } = await tabbar();
+        this.list = res.index
         },
+        methods: {
+            tr(item, index) {
+                this.active = index
+                this.$router.push(item.url)
+            }
+        }
     }
 </script>
-<style>
-    .box {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        height: 70px;
-        width: 100%;
-        display: flex;
-    }
+<style lang="scss" scoped>
+    .tabbar {
+        width: 100vw;
+        height: 100vh;
+        position: relative;
 
-    .box .link {
-        flex: 1;
-    }
+        .tabbar-box {
+            width: 100vw;
+            height: 88px;
+            position: fixed;
+            bottom: 0px;
+            left: 0px;
+            display: flex;
+            justify-content: space-between;
 
-    .icon {
-        width: 60%;
-        height: 40px;
-    }
+            .box-item {
+                flex: 1;
+                text-align: center;
 
-    .link {
-        text-align: center;
-    }
-
-    .router-link-active {
-        color: red;
+                .item_img {
+                    width: 40px;
+                    height: 50px;
+                }
+            }
+        }
     }
 </style>
