@@ -10,7 +10,6 @@
                     <p style="align:center">积分：4</p>
                 </div>
                 <div>
-                  <!-- <span class="duii" style="color:white">签到规则</span>--> 
                     <van-tag plain type="success">签到规则</van-tag>
                 </div>
             </div>
@@ -200,7 +199,7 @@
 
     .top {
         width: 80%;
-        height: 100px;
+        height: 80px;
         display: flex;
         justify-content: space-between;
         margin: auto;
