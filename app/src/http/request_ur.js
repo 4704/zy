@@ -10,5 +10,6 @@ module.exports = {
     kc: "/teacher/search/attrs",
     teacher: "/teacher/",
     mainCourse: "/teacher/mainCourse",
-    basis: '/courseInfo/basis_id/'
+    courseInfo: "/courseInfo/basis_id=",
+    // courseChapter: "/courseChapter"
 }

@@ -74,10 +74,18 @@ export function mainCourse(arg) {
     })
 }
 
-export function basis(arg) {
+export function courseInfo(arg) {
     return service({
-        url: request_ur.basis,
+        url: request_ur.courseInfo + arg,
         data: arg,
         method: "get"
     })
 }
+
+// export function courseChapter(arg) {
+//     return service({
+//         url: request_ur.courseChapter,
+//         data: arg,
+//         method: "post"
+//     })
+// }
