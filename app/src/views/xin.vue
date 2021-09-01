@@ -16,7 +16,7 @@
             </div>
             <div>
                 <van-calendar row-height="70px" title="日历" :poppable="false" :show-confirm="false"
-                    :style="{ height: '300px' }" />
+                    :style="{ height: '350px' }" />
             </div>
             <div class="good">
                 <div class="good_top">
@@ -102,7 +102,7 @@
 
     .hot {
         width: 100%;
-        height: 150px;
+        height: 20px;
     }
 
     .good {
@@ -111,8 +111,6 @@
 
         .good_bottom {
             display: flex;
-            /*padding: 0.4rem 0.26667rem;*/ 
-            /*padding: 4vw 2.66667vw; */ 
             padding-left: 5px;
             padding-top: 10px;
             .hezi{
