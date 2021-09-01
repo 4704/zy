@@ -2,7 +2,6 @@
   <div class="zong">
     <div class="boxx">
       <van-icon name="balance-list-o" />
-      <!-- <input type="text" placeholder="搜索"> -->
       <el-input placeholder="搜索" suffix-icon="el-icon-search"></el-input>
       <i class="el-icon-mobile"></i>
     </div>
@@ -20,234 +19,271 @@
         <p class="p">大威天龙</p>
       </li>
     </ul>
-    <div class="zs">
-      <span class="sp">
-        |
-      </span>
-      资深讲师
-      <span class="pq">
-        更多>
-      </span>
-    </div>
-    <van-card
-      v-for="(item, index) in list"
-      :key="index"
-      :desc="item.teacher_name"
-      :title="item.introduction"
-      :thumb="item.teacher_avatar"
-    />
+    <div class="card-list">
+      <!-- 资深讲师 -->
+      <div class="teacher">
+        <div class="t-header">
+          <p class="t-p">资深讲师</p>
+          <p class="t-p">更多 > </p>
+        </div>
+        <div class="t-next" v-for="(item,index) in t_list.list" :key="index">
+          <div class="next-box">
+            <div class="box-left">
+              <img :src="item.teacher_avatar" alt="">
+            </div>
+            <div class="box-right">
+              <p class="right-p1">{{item.teacher_name}}</p>
+              <p class="right-p2">{{item.introduction}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
 
-    <div class="zs">
-      <span class="sp">
-        |
-      </span>
-      推荐课程
-      <span class="pq">
-        更多>
-      </span>
+      <!-- 推荐课程 -->
+      <div class="tjkc">
+        <div class="tj-header">
+          <p class="t-p">推荐课程</p>
+          <p class="t-p">更多 > </p>
+        </div>
+        <div class="tj-next" v-for="(item,index) in tj_list.list" :key="index">
+          <div class="next-box">
+            <div class="box-left">
+              <img :src="item.cover_img" alt="">
+            </div>
+            <div class="box-right">
+              <p class="right-p1">{{item.title}}</p>
+              <div style="margin-top: 35px;height:20px;display:flex;justify-content: space-between;">
+                <p class="right-p2">{{item.sales_num}}人已报名</p>
+                <p style="color:green;font-size:16px">免费</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 名师 -->
+      <div class="teacher">
+        <div class="t-header">
+          <p class="t-p">名师</p>
+          <p class="t-p">更多 > </p>
+        </div>
+        <div class="t-next" v-for="(item,index) in ms_list.list" :key="index">
+          <div class="next-box">
+            <div class="box-left">
+              <img :src="item.teacher_avatar" alt="">
+            </div>
+            <div class="box-right">
+              <p class="right-p1">{{item.teacher_name}}</p>
+              <p class="right-p2">{{item.introduction}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-      <van-card
-      v-for="(item, index) in listt"
-      :key="index"
-      :desc="item.sales_num"
-      :title="item.title"
-      :thumb="item.cover_img"
-    />
-
-    <div class="zs">
-      <span class="sp">
-        |
-      </span>
-      名师
-      <span class="pq">
-        更多>
-      </span>
-    </div>
-      <van-card
-      v-for="(item, index) in listtt"
-      :key="index"
-      :desc="item.introduction"
-      :title="item.teacher_name"
-      :thumb="item.teacher_avatar"
-    />
-    
-    <div class="yyyy"></div>
   </div>
 </template>
 <script>
+  import {
+    shuj
+  } from "@/http/api";
+  export default {
 
-import { shuj } from "@/http/api";
-export default {
-
-  data() {
-    return {
-      list: [],
-      listt: [],
-      listtt:[]
-    };
-  },
-
-  async created() {
-    let {
-      data: { data: res },
-    } = await shuj();
-    this.list = res[0].list;
-  },
-  mounted() {
-    this.getlist();
-    this.getl()
-  },
-  methods: {
-    async getlist() {
-      let {
-        data: { data: res },
-      } = await shuj();
-      this.listt = res[1].list;
+    data() {
+      return {
+        t_list: [],
+        tj_list: [],
+        ms_list: [],
+      };
     },
-     async getl() {
-      let {
-        data: { data: res },
-      } = await shuj();
-      this.listtt = res[2].list;
-      console.log(JSON.parse(JSON.stringify(this.listtt)));
+
+     created() {
+         this.getappIndex();
     },
-  },
-};
+    
+    methods: {
+      async getappIndex(){
+            const { data:res } = await shuj();
+            this.t_list = res[0]
+            this.tj_list = res[1]
+            this.ms_list = res[2]
+        }
+    },
+  };
 </script>
-<style scoped>
-.mff {
-  margin-left: 100px;
-  font-size: 12px;
-}
+<style lang="scss" scoped>
+/*留*/
+  .zong {
+    background: #f7f8fa;
+  }
+/**留 */
+  .my-swipe .van-swipe-item {
+    color: #fff;
+    font-size: 20px;
+    line-height: 100px;
+    text-align: center;
+  }
 
-.zong {
-  background: #f7f8fa;
-}
-
-.ziti {
-  font-size: 18px;
-  color: red;
-}
-
-.mf {
-  color: green;
-  margin-left: 100px;
-}
-
-.my-swipe .van-swipe-item {
-  color: #fff;
-  font-size: 20px;
-  line-height: 150px;
-  text-align: center;
-}
-
-.t {
-  margin-left: 15px;
-  margin: 5px;
-}
-
-.tu {
-  width: 80px;
-  height: 80px;
-  line-height: 35px;
-}
-
-.tu2 {
-  width: 60px;
-  height: 60px;
-  line-height: 35px;
-  border-radius: 50%;
-  margin-top: 10px;
-  margin-left: 10px;
-}
-
-.tu1 {
-  width: 80px;
-  height: 80px;
-}
-
-.ul {
-  width: 100%;
-}
-
-.zi {
-  color: #999;
-  font-size: 12px;
-}
-
-.li {
-  width: 350px;
-  background: #fff;
-  border-radius: 10px;
-  margin-top: 15px;
-  margin-left: 25px;
-  line-height: 35px;
-}
-
-.van-icon {
-  color: coral;
-  font-size: 35px;
-  margin-left: 13px;
-}
-
-.el-input__inner {
-  width: 350px;
-}
-
-.el-icon-mobile {
-  font-size: 35px;
-  color: red;
-}
-
-.boxx {
-  width: 100%;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-
-.i {
-  width: 100%;
-  height: 200px;
-}
-
-.i1 {
-  width: 100%;
-  height: 200px;
-}
-
-.i2 {
-  width: 50px;
-  height: 50px;
-  margin-left: 20px;
-}
-
-.p {
-  margin-left: 10px;
-}
-
-.sp {
-  font-size: 35px;
-  color: red;
-}
-
-.pq {
-  margin-left: 270px;
-}
-
-.zs {
-  width: 100%;
-  background: rgb(235, 233, 233);
-  margin-top: 10px;
-}
-
-.im {
-  display: flex;
-  margin-left: 25px;
-  box-sizing: border-box;
-}
-
-.yyyy {
-  height: 100px;
-}
+/*留*/
+  .van-icon {
+    color: coral;
+    font-size: 35px;
+    margin-left: 13px;
+  }
+/*留*/
+  .el-input__inner {
+    width: 350px;
+  }
+/*留 */
+  .el-icon-mobile {
+    font-size: 35px;
+    color: red;
+  }
+/*留*/
+  .boxx {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+/**留 */
+  .i {
+    width: 100%;
+    height: 200px;
+  }
+/** */
+  .i1 {
+    width: 100%;
+    height: 200px;
+  }
+/**留 */
+  .i2 {
+    width: 50px;
+    height: 50px;
+    margin-left: 20px;
+  }
+/**留 */
+  .p {
+    margin-left: 10px;
+  }
+  /*首页资深讲师&推荐课程&名师 */   
+  .card-list{
+      width: 100vw;
+      background-color:#f7f8fa;
+      padding-top: 20px;
+      margin-bottom: 100px;
+    /* 资深讲师*/  
+      .teacher{
+          width: 90vw;
+          margin: auto;
+          .t-header{
+              width: 100%;
+              margin: auto;
+              display: flex;
+              justify-content: space-between;
+              border-left: 3px solid red;
+              padding-left: 10px;
+              box-sizing: border-box;
+              position: relative;
+              .t-p{
+                  font-size: 15px;
+              }
+          }
+          .t-next{
+              width: 100%;
+              height: 100px;
+              background-color: white;
+              border-radius: 20px;
+              margin: 20px 0;
+              position: relative;
+              .next-box{
+                  width: 80%;
+                  height: 60%;
+                  position: absolute;
+                  top: 50%;
+                  left: 50%;
+                  transform: translate(-50%,-50%);
+                  display: flex;
+                  justify-content: space-between;
+                  .box-left{
+                      flex: 1;
+                      img{
+                          width: 50px;
+                          height: 50px;
+                          display: block;
+                          border-radius: 50%;
+                      }
+                  }
+                  .box-right{
+                      flex: 5;
+                      margin-left: 20px;
+                      .right-p1{
+                          font-size: 20px;
+                      }
+                      .right-p2{
+                          font-size: 15px;
+                          margin-top: 10px;
+                          color: #ccc;
+                      }
+                  }
+              }
+          }
+      }
+    /*推荐课程*/ 
+    .tjkc{
+        width: 90vw;
+        margin: auto;
+        .tj-header{
+              width: 100%;
+              margin: auto;
+              display: flex;
+              justify-content: space-between;
+              border-left: 3px solid red;
+              padding-left: 10px;
+              box-sizing: border-box;
+              position: relative;
+              .t-p{
+                  font-size: 15px;
+                
+              }
+        }
+        .tj-next{
+              width: 100%;
+              height: 120px;
+              background-color: white;
+              border-radius: 20px;
+              margin: 20px 0;
+              position: relative;
+              .next-box{
+                  width: 80%;
+                  height: 70%;
+                  position: absolute;
+                  top: 50%;
+                  left: 50%;
+                  transform: translate(-50%,-50%);
+                  display: flex;
+                  justify-content: space-between;
+                  .box-left{
+                      flex: 2;
+                      img{
+                          width: 70px;
+                          height: 70px;
+                          display: block;
+                          border-radius: 50%;
+                      }
+                  }
+                  .box-right{
+                      flex: 5;
+                      margin-left: 20px;
+                      .right-p1{
+                          margin-top: 10px;
+                          font-size: 20px;
+                      }
+                      .right-p2{
+                          font-size: 20px;
+                          color: #ccc;
+                      }
+                  }
+              }
+          }
+    }
+  }
 </style>
