@@ -47,12 +47,7 @@
         },
         methods: {
             gokcxq(id) {
-                this.$router.push({
-                    path: '/kcxq',
-                    query: {
-                        id: id
-                    }
-                })
+                this.$router.push({ path: '/kcxq',query: { id: id }})
             }
         },
         async created() {

@@ -65,6 +65,12 @@ const routes = [{
         component: () =>
             import ("@/views/ShowTeachers/xq"),
     },
+    {
+        path: "/kcxq",
+        name: "kcxq",
+        component: () =>
+            import ("@/views/ShowTeachers/kcxq"),
+    },
 
     // 签到页路由
     {
