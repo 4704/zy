@@ -1,17 +1,24 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import Home from "../views/Home.vue";
+import home from "../views/Home.vue";
 
 Vue.use(VueRouter);
 
 const routes = [{
-        path: "/home",
-        name: "Home",
-        component: Home,
+        path: "/",
+        redirect: "/tabbar",
     },
     {
-        path: "/login",
-        name: "login",
+        path: "/home",
+        name: "home",
+        component: home,
+    },
+    {
+        path: "/tabbar",
+        name: "tabbar",
+        redirect: "/index",
+        component: () =>
+            import ("../components/tabbar.vue"),
         children: [{
                 path: "/index",
                 name: "index",
@@ -19,47 +26,39 @@ const routes = [{
                     import ("@/views/index/index"),
             },
             {
-                path: "/class",
-                name: "class",
+                path: "/ShowTeachers",
+                name: "ShowTeachers",
                 component: () =>
-                    import ("@/views/class/class"),
+                    import ("@/views/ShowTeachers/ShowTeachers"),
             },
             {
-                path: "/news",
-                name: "news",
+                path: "/News",
+                name: "News",
                 component: () =>
-                    import ("@/views/news/news"),
+                    import ("@/views/News/News"),
             },
             {
-                path: "/book",
-                name: "book",
+                path: "/BookList",
+                name: "BookList",
                 component: () =>
-                    import ("@/views/book/book"),
+                    import ("@/views/BookList/BookList"),
             },
             {
-                path: "/my",
-                name: "my",
+                path: "/Person",
+                name: "Person",
                 component: () =>
-                    import ("@/views/my/my"),
+                    import ("@/views/Person/Person"),
             },
-
-            {
-                path: "/setUser",
-                name: "setUser",
-                component: () =>
-                    import ("@/views/my/setUser"),
-            },
-            // setUser
         ],
-        component: () =>
-            import ("@/views/login"),
     },
     {
-        path: "/about",
-        name: "About",
+        path: "/setUser",
+        name: "setUser",
         component: () =>
-            import ("../views/About.vue"),
+            import ("@/views/Person/setUser"),
     },
+
+    // 签到页路由
     {
         path: "/xin",
         name: "xin",

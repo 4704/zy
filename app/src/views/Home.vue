@@ -62,7 +62,7 @@ export default {
       } else {
         let PhoneReg = /^1[3456789]\d{9}$/;
         if (PhoneReg.test(this.phone)) {
-          const data = await sms_code({
+          const data = await smsCode({
             mobile: this.phone,
             sms_type: "login",
           });
@@ -74,40 +74,44 @@ export default {
     },
     // 登陆
     async addLogin() {
-      let PhoneReg = /^1[3456789]\d{9}$/;
-      if (PhoneReg.test(this.phone) || this.pwd.length == 6) {
-        if (this.flag) {
-          //true 为验证码登陆
-          const  res  = await login({
-            mobile: this.phone,
-            sms_code: this.pwd,
-            type: 2,
-            client: "1",
-          });
-          console.log(res);
-          this.$store.commit("token", res.remember_token);
-          Toast.success("登陆成功");
-          this.$router.push("/person");
-        } else {
-          //false 为密码登陆
-          const  res  = await login({
-            mobile: this.phone,
-            password: this.pwd,
-            type: 1,
-            client: "1",
-          });
-          console.log(res);
-          if (res.code == 200) {
-            this.$store.commit("token", res.remember_token);
+       let PhoneReg = /^1[3456789]\d{9}$/;
+        if (PhoneReg.test(this.phone) || this.pwd.length == 6) {
+          if (this.flag) { //true 为验证码登陆
+            const data = await login({
+              mobile: this.phone,
+              sms_code: this.pwd,
+              type: 2,
+              client: "1"
+            });
+            console.log(data);
+            let obj = {
+                remember_token:data.data.remember_token,
+                nickname: data.data.nickname
+              }
+            this.$store.commit("token", obj);
             Toast.success("登陆成功");
-            this.$router.push("/person");
+            this.$router.push("/person")
+          }else{ //false 为密码登陆
+            const { data: res } = await login({
+              mobile: this.phone,
+              password: this.pwd,
+              type: 1,
+              client: "1"
+            });
+            if(res.remember_token){
+              let obj = {
+                remember_token:res.remember_token,
+                nickname: res.nickname
+              }
+              this.$store.commit("token", obj);
+              Toast.success("登陆成功");
+              this.$router.push("/person")
+            }
           }
         }
-      } else {
-        Toast.fail("请输入正确的手机号");
-      }
+      } 
     },
-  },
+  
 };
 </script>
 

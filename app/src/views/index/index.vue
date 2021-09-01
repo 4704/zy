@@ -75,13 +75,10 @@
   </div>
 </template>
 <script>
-// import Tabbar from '@/components/tabbar'
-// import {banner} from '@/http/api'
+
 import { shuj } from "@/http/api";
 export default {
-  //  components: {
-  //     Tabbar
-  // },
+
   data() {
     return {
       list: [],
@@ -106,7 +103,6 @@ export default {
         data: { data: res },
       } = await shuj();
       this.listt = res[1].list;
-    //   console.log(JSON.parse(JSON.stringify(this.listt)));
     },
      async getl() {
       let {

@@ -6,19 +6,15 @@
                 <p style="color:#fff;font-size:20px;margin-top:10px" @click="goLogin">
                     登陆/注册
                 </p>
-
             </div>
-
             <div class="box-success">
                 <img style="width:70px;height:70px;" src="http://120.53.31.103:84/uploads/avatar.jpg" alt=""
                     class="tou">
-                <!-- <p>{{data.nickname}}</p>-->
                 <b>181****1234</b>
                 <van-tag type="primary" size="large" @click="qd" v-show="show_q">
                     <van-icon name="calendar-o" />
                     已签到</van-tag>
             </div>
-
             <div class="box-bottom">
                 <div class="box-ad">
                     <p class="box-ac">0</p>

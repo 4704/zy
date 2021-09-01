@@ -27,14 +27,6 @@ export function tabbar(arg) {
         method: "get",
     });
 }
-// 轮播
-// export function banner(arg) {
-//     return service({
-//         url: request_ur.banner,
-//         data: arg,
-//         method: "get"
-//     })
-// }
 // 数据
 export function shuj(arg) {
     return service({
@@ -49,5 +41,13 @@ export function password(arg) {
         url: request_ur.password,
         data: arg,
         method: "post"
+    })
+}
+// 个人签到
+export function integral(arg) {
+    return service({
+        url: request_ur.integ,
+        data: arg,
+        method: "get"
     })
 }
