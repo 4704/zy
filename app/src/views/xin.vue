@@ -7,7 +7,7 @@
                 </div>
                 <div class="top_two">
                     <span>181****1234</span>
-                    <p style="align:center">积分：4</p>
+                    <p class="ee">积分：4</p>
                 </div>
                 <div>
                     <van-tag plain type="success">签到规则</van-tag>
@@ -64,8 +64,8 @@
 </script>
 <style lang="scss" scoped>
     .top_two {
-        margin-right: 22.667vw;
-        font-size: 15px;
+        margin-right: 50px;
+        font-size: 16px;
         margin-top: 12px;
         margin-left: 12px;
     }
@@ -76,7 +76,7 @@
     }
 
     .van-calendar {
-        box-shadow: 10px 10px 20px #888888;
+        box-shadow: 10px 10px 20px #999;
     }
 
     .top_top {
@@ -153,16 +153,8 @@
     }
 
     .good_right::after {
-        content: "";
+
         display: block;
-        border-top: 0.02667rem solid #b7b7b7;
-        border-top: 0.26667vw solid #b7b7b7;
-        border-right: 0.02667rem solid #b7b7b7;
-        border-right: 0.26667vw solid #b7b7b7;
-        width: 0.18667rem;
-        width: 1.86667vw;
-        height: 0.18667rem;
-        height: 1.86667vw;
         position: absolute;
         top: 50%;
         right: 0;
@@ -170,7 +162,7 @@
     }
 
     .good_left::after {
-        content: "";
+
         display: inline-block;
         width: 0.05333rem;
         width: 0.53333vw;
@@ -220,5 +212,8 @@
         font-size: 12px;
         width: 50px;
         height: 25px;
+    }
+    .ee{
+        text-align: center;
     }
 </style>
