@@ -11,5 +11,6 @@ module.exports = {
     teacher: "/teacher/",
     mainCourse: "/teacher/mainCourse",
     courseInfo: "/courseInfo/basis_id=",
-    // courseChapter: "/courseChapter"
+    classfy: "/information/classify",
+    qb: "/information/index"
 }

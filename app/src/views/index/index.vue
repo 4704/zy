@@ -176,6 +176,7 @@
           margin: auto;
           .t-header{
               width: 100%;
+              height: 25px;
               margin: auto;
               display: flex;
               justify-content: space-between;
@@ -233,6 +234,7 @@
         margin: auto;
         .tj-header{
               width: 100%;
+              height: 20px;
               margin: auto;
               display: flex;
               justify-content: space-between;
@@ -242,7 +244,6 @@
               position: relative;
               .t-p{
                   font-size: 15px;
-                
               }
         }
         .tj-next{
