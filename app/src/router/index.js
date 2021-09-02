@@ -35,7 +35,7 @@ const routes = [{
                 path: "/News",
                 name: "News",
                 component: () =>
-                    import ("@/views/News/News"),
+                    import ("@/views/News/news"),
             },
             {
                 path: "/BookList",
