@@ -79,6 +79,13 @@ const routes = [{
         component: () =>
             import ("@/views/xin.vue"),
     },
+    // 资讯详情
+    {
+        path: "/zxxq",
+        name: "zxxq",
+        component: () =>
+            import ("@/views/News/zxxq"),
+    },
 ];
 
 const router = new VueRouter({

@@ -5,7 +5,7 @@
                 <div class="box-z">
                     <ul class="ul">
                         <li v-for="(item, index) in zb" :key="index" class="li">
-                            <img :src="item.thumb_img" alt="">
+                            <img :src="item.thumb_img" alt="" @click="goxq(item.id)">
                             <div class="aa">
                                 <div class="desc">
                                     <p>{{item.title}}</p>
@@ -32,7 +32,7 @@
                 <div class="box-z">
                 <ul class="ul">
                         <li v-for="(item, index) in zb" :key="index" class="li">
-                            <img :src="item.thumb_img" alt="">
+                            <img :src="item.thumb_img" alt="" @click="goxq(item.id)">
                             <div class="aa">
                                 <div class="desc">
                                     <p>{{item.title}}</p>
@@ -68,7 +68,8 @@
 <script>
     import {
         classfy,
-        qb
+        qb,
+        detal
     } from '@/http/api'
     export default {
         data() {
@@ -109,8 +110,16 @@
                 this.classify_id = e
                 this.getzb()
                 console.log(e);
-            }
+            },
+            //  goxq(id){
+            // // console.log(this.id);
+            // this.$router.push({ path: '/zxxq',query: { id:this.classify_id }})
+            // },
+           goxq(item){
+             this.$router.push({path:`/zxxq?id=${item}`})
+           }
         },
+       
     }
 </script>
 <style lang="scss" scoped>
