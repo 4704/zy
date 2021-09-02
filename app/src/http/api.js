@@ -82,10 +82,18 @@ export function courseInfo(arg) {
     })
 }
 
-// export function courseChapter(arg) {
-//     return service({
-//         url: request_ur.courseChapter,
-//         data: arg,
-//         method: "post"
-//     })
-// }
+export function classfy() {
+    return service({
+        url: request_ur.classfy,
+        data: {},
+        method: "get"
+    })
+}
+
+export function qb(arg) {
+    return service({
+        url: request_ur.qb,
+        data: arg,
+        method: "post"
+    })
+}

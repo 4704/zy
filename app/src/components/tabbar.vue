@@ -41,12 +41,12 @@
 
         .tabbar-box {
             width: 100vw;
-            height: 88px;
+            height: 60px;
             position: fixed;
             bottom: 0px;
             left: 0px;
             display: flex;
-            justify-content: space-between;
+            background: #ffffff;
 
             .box-item {
                 flex: 1;
@@ -54,7 +54,7 @@
 
                 .item_img {
                     width: 40px;
-                    height: 50px;
+                    height: 40px;
                 }
             }
         }
