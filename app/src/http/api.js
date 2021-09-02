@@ -97,3 +97,11 @@ export function qb(arg) {
         method: "post"
     })
 }
+
+export function detal(arg) {
+    return service({
+        url: request_ur.detal,
+        data: arg,
+        method: "post"
+    })
+}
